@@ -1,3 +1,8 @@
+//Пример обобщенного интерфейса
+interface Contaiment<T> {
+	//Проверка содержимого объекта и некоторого класса на наличие указанного элемента
+	boolean contains(T o);
+}
 class NumFns<T extends Number> {
 	T num;
 	NumFns (T n) {
@@ -74,6 +79,43 @@ class GenMeth {
 
 	}
 }
+
+class Summation {
+	private int sum;
+	<T extends Number> Summation(T arg) {
+		sum = 0;
+
+		for(int i=0; i<= arg.intValue(); i++)
+			sum += i;
+	}
+
+	int getSum() {
+		return sum;
+	}
+}
+
+//Реализация
+class ClassGenInt<T> implements Contaiment<T> {
+//Класс, реализующий обобщенный интерфейс 
+	T[] arrayRef;
+	ClassGenInt(T[] o) {
+		arrayRef = o;
+	}
+	//Реализация метода contains{}
+	public boolean contains(T o) {
+		for(T x:arrayRef)
+			if (x.equals(o)) return true;
+		return false;
+	}
+	
+}
+//ограничение типа данных при обобщении
+//...
+//}
+
+//
+//...
+//}
 class pr002 {
 	public static void main(String args[]) {
 		NumFns<Integer> iOb = new NumFns<Integer>(5);
@@ -179,9 +221,44 @@ class pr002 {
 		if(GenMeth.arraysEqual(nums6, nums5))
 			System.out.println("Массив nums5 совпадает с nums");
 
+		System.out.println();
+		Summation ob = new Summation(4.2);
+		System.out.println("сумма целых чисел от 0 до 4.0 равна " + ob.getSum());
 
+		System.out.println();
+		Summation ob2 = new Summation(4);
+		System.out.println("Сумма целых чисел от 0 до 4.0 равна " + ob2.getSum());
 
+		//Демонстрация
+		System.out.println();
+		Integer x10[] = {1,2,3};
+		Double y10[] = {1.0, 2.0, 3.0};
 
+		ClassGenInt<Integer> ob3 = new ClassGenInt<Integer>(x10);
+
+		if(ob3.contains(2))
+			System.out.println("2 содержится в ob3");
+		else
+			System.out.println("2 несодержится в ob3");
+		
+		if(ob3.contains(4))
+			System.out.println("4 содержится в ob3");
+		else
+			System.out.println("4 несодержится в ob3");
+
+		ClassGenInt<Double> ob4 = new ClassGenInt<Double>(y10);
+		
+		
+		if(ob4.contains(2.0))
+			System.out.println("2.0 содержится в ob4");
+		else
+			System.out.println("2.0 несодержится в ob4");
+		
+		if(ob4.contains(4.0))
+			System.out.println("4.0 содержится в ob4");
+		else
+			System.out.println("4.0 несодержится в ob4");
+		
 
 	}
 }
