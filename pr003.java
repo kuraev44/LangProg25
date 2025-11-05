@@ -34,11 +34,17 @@ class pr003 {
 			catch(ArrayIndexOutOfBoundsException exc) {
 				System.out.println("Исключительная ситуация: выход за границы массива");
 			}
-			
+			/*
 			catch(ArithmeticException exc2) {
 				System.out.println("Исключительная ситуация: неверная арифметическая ситуация");
 			}
 			System.out.println("После оператора catch");
+		
+		*/
+		//использование класса
+			catch (Throwable exc) {
+				system.out.println("Исключение, для которого не написан специфический обработчик");
+			}
 		}
 	}
 
