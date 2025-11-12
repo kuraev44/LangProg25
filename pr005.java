@@ -1,14 +1,15 @@
 class pr005 {
 	public static void main(String args[]) {
-		int number[] = {4, 8, 16, 32, 64, 128, 256, 512};
+		/*int number[] = {4, 8, 16, 32, 64, 128, 256, 512};
 		int denom[] = {2, 0, 4, 4, 0, 8};
-
+		*/
 		try {
-			System.out.println("Жот оператора throw");
+			//System.out.println("Жот оператора throw");
 			throw new ArithmeticException();
 		}
-		catch (ArrayIndexOutOfBoundsException exc) {
-			System.out.println("Перехват");
+		catch (ArithmeticException exc) {
+			System.out.println("Перехват исключения класса ArithmeticException");
 		}	
+		System.out.println();
 	}
 }
