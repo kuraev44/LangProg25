@@ -1,4 +1,4 @@
-class ShoppingCard {
+/*class ShoppingCard {
 	private List<String> items = new ArrayList<>();
 
 	public void addItem(String item) {
@@ -25,7 +25,7 @@ class ShoppingCard {
 }
 
 ShoppingCard card = new ShoppingCard();
-card.addItem("Флешка");
+card.addItem("Флешка")o;
 card.getDiscountPercentage()
 card.addItem("Книга");
-card.getitems().remove("Книга")
+card.getitems().remove("Книга")*/
