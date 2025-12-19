@@ -1,6 +1,15 @@
 interface SomeTest<T> {
     boolean test(T n, T m);
+
 }
+class My class {
+	static <T> boolean myGenMeth(T x, T y) {
+		boolean resylt = false;
+		//....
+		return result;
+	}
+}
+SomeTest<Integer>mRef = MyClass::<Integer>myGenMeth;
 SomeTest <Integer> isractor = (n, d) -> (n%d)==0;
 SomeTest <Double> isractorD = (n, d) -> (n%d) == 0;
 SomeTest <String> isIn = (a, b) -> a.indexOf(b) != -1;
